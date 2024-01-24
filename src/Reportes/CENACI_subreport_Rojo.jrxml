@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CENACI_subreport_Rojo" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="97e1ee35-f2ac-4844-9088-9096341668e1">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_sub" class="java.lang.String"/>
+	<parameter name="tod_sub" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select semaforo, count(semaforo) as registrosRojo from Emergencia where semaforo = 'Rojo' and fecha BETWEEN $P{from_sub} AND $P{tod_sub};]]>
+	</queryString>
+	<field name="semaforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registrosRojo" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="10" width="178" height="37" uuid="2a9add4e-be53-4bb0-b81b-fad9c138b80f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">REGISTROS PRIORIDAD ALTA (ROJO)</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="48" width="178" height="37" forecolor="#990000" uuid="9cb6f346-cedd-4da8-b577-6e145f6a8538"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrosRojo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

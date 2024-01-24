@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CENACI_subreport_Verdes" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="24b1e9bf-36dd-4d22-8cad-f3b54f554fff">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_sub" class="java.lang.String"/>
+	<parameter name="tod_sub" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select semaforo, count(semaforo) as registrosVerde from Emergencia where semaforo = 'Verde' and fecha BETWEEN $P{from_sub} AND $P{tod_sub};]]>
+	</queryString>
+	<field name="semaforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registrosVerde" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="10" width="180" height="37" uuid="19f82126-816a-4494-84ce-872b25a3b13a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">REGISTROS PRIORIDAD BAJA (VERDE)</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="47" width="180" height="37" forecolor="#009900" uuid="ed4d1542-08ce-4585-858d-394c3b42bb70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrosVerde}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

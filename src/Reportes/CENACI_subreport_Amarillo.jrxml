@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CENACI_subreport_Amarillo" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5d771de0-6718-40b5-be18-031147cb2e5d">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_sub" class="java.lang.String"/>
+	<parameter name="tod_sub" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select semaforo, count(semaforo) as registrosAmarillos from Emergencia where semaforo = 'Amarillo' and fecha BETWEEN $P{from_sub} AND $P{tod_sub};]]>
+	</queryString>
+	<field name="semaforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registrosAmarillos" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="10" width="180" height="39" uuid="817350b1-086e-430d-82da-73468d8d1663"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">REGISTROS PRIORIDAD MEDIA (AMARILLO)</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="49" width="180" height="39" forecolor="#CCCC00" uuid="51c9779c-c7c0-4f8a-ac12-02e97306012b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrosAmarillos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dca82676-7ea8-410c-87e5-951e93fbcf90">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="12"/>
+	<parameter name="fromd" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tod" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDuser" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Omar\\Desktop\\C2 PROYECTO\\C2_propuesta\\src\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from Emergencia where fecha between $P{fromd} and $P{tod}]]>
+	</queryString>
+	<field name="folio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idUsuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idEquipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoLlamada" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semaforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fase" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionHeridos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reporte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="seguridadPublica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aguaPotable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="proteccionCivil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="instanciaMujer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidadUno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otrosServicios" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incidenteDenuncia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ubicacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionLugar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="involucrados" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreDenunciante" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estatus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="200" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="364" y="0" width="438" height="70" backcolor="#15153D" uuid="ee4b0ef2-bc47-451f-8f37-ed85a0e6a99f"/>
+				<staticText>
+					<reportElement x="113" y="40" width="325" height="30" forecolor="#FFFFFF" uuid="0aebcb4d-4d7a-4e2e-a2ba-9df6837169c5"/>
+					<textElement textAlignment="Right">
+						<font fontName="Courier New" size="23" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de Incidencias ]]></text>
+				</staticText>
+			</frame>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="605" y="82" width="197" height="20" uuid="b921dfce-897e-4341-ab42-9c68ea50fe9f"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica-Bold'>" + new java.util.Date() + "</style>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="605" y="102" width="197" height="20" uuid="d48f8b4d-b933-4437-879f-1e79e9477cd9"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Cuautepec de Hinojosa</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="605" y="122" width="197" height="20" uuid="f5ba60fa-c875-4f71-815c-437da4b2126a"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">CP: 43740</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="175" width="127" height="20" uuid="16f450c9-06e2-43a0-986d-b3e33a3ad6dc"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Reporte Desde:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="175" width="89" height="20" uuid="6bdb8692-d45f-4f30-bb8d-fe57001c1a02"/>
+				<textElement>
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="175" width="56" height="20" uuid="ec96766c-ae6d-4289-88ba-898aae7c70cd"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Hasta:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="304" y="175" width="100" height="20" uuid="ffaba3b3-02b8-40c0-bdc4-c437f468c92f"/>
+				<textElement>
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="135" width="175" height="20" uuid="82fc19a4-b152-4615-b4fc-fc8e5418edfb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{IDuser}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="135" width="79" height="20" uuid="7056b943-0aee-406b-8aab-8c0b219baf12"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">ID:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="155" width="79" height="20" uuid="951c3014-f14f-4682-903c-8a997e8583a3"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Nombre:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="155" width="175" height="20" uuid="2e7b4f6e-dc5a-4062-acba-5917d079a840"/>
+				<textElement>
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="2" y="0" width="362" height="102" uuid="65ecf7a0-bd19-47d9-8fb8-1c2929dd5466"/>
+				<imageExpression><![CDATA["C:\\logoReport\\CENACI_Report_Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="73" height="19" backcolor="#CCCCCC" uuid="bc6a56ab-fd2b-482f-a617-372d2e0c4c60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">FOLIO</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="73" y="0" width="80" height="19" backcolor="#CCCCCC" uuid="b7197c32-fce4-4c1c-9d35-a9d93c7f16bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">FECHA</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="153" y="0" width="87" height="19" backcolor="#CCCCCC" uuid="5774220f-cc7c-4de6-a1ce-03b4ae6b7f71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">SEMAFORO</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="240" y="0" width="362" height="19" backcolor="#CCCCCC" uuid="9255891d-661c-4a63-a5bc-5a4deb1d28b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">INCIDENTE/DENUNCIA</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="602" y="0" width="131" height="19" backcolor="#CCCCCC" uuid="cfdba2fd-8142-4f8c-a221-a8b1ebc04c8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">UBICACIÓN</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="733" y="0" width="69" height="19" backcolor="#CCCCCC" uuid="4ebe6977-898e-4448-b504-42afdb5ead38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">ESTATUS</style>]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="802" height="53" uuid="4fa8ff13-bda2-4d22-9a8f-2402518b1b52"/>
+				<textField>
+					<reportElement x="0" y="1" width="73" height="52" uuid="6c65a5ff-2f11-4562-8973-4e833077aa64"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+				</textField>
+				<textField pattern="yyyy/MM/dd">
+					<reportElement x="73" y="1" width="80" height="52" uuid="1cd9fcec-ed15-493d-9840-f8d8e5261639"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="153" y="1" width="87" height="52" uuid="c6ec76a1-602a-4f9a-b520-c7e466b7091c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semaforo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="240" y="2" width="362" height="51" uuid="39c3ff24-ffe5-4abf-8ae2-77094efa61b2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{incidenteDenuncia}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="605" y="1" width="128" height="52" uuid="1f32411c-bca7-4c43-bf4d-3d90ac4bf32b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ubicacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="735" y="1" width="67" height="52" uuid="a5c3a08b-ff6f-49c2-a1b5-49d54679d19e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="24" backcolor="#15153D" uuid="3945c75d-34c9-4161-bbda-936dd20c5410"/>
+				<textField>
+					<reportElement x="672" y="0" width="73" height="20" forecolor="#FFFFFF" uuid="9240a86e-5ae9-42c5-977d-e8a682496f34"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="745" y="0" width="45" height="20" forecolor="#FFFFFF" uuid="eeec6fdc-e7f9-4c3e-af0b-9500806b771f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="198" splitType="Stretch">
+			<subreport>
+				<reportElement x="295" y="52" width="200" height="39" uuid="71aed897-7083-4237-aca5-04382982d03d"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreport_Amarillo.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="585" y="52" width="200" height="39" uuid="25af1b29-cbd4-4f0d-ae6f-a4e290c18453"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreport_Verdes.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="19" y="52" width="200" height="39" uuid="db5f64f4-6780-4298-94a3-cb0180fa1914"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreport_Rojo.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="122" y="0" width="613" height="47" uuid="26b9f046-6c85-4652-875b-6de5ad566973"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreportTotalReg.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="443" y="141" width="200" height="39" uuid="0e3807e9-c309-4dbe-b9c6-69b4dcdedd16"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreportAbiertos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="153" y="141" width="200" height="39" uuid="a0d0e438-c747-4bed-8485-f9c378c73ff0"/>
+				<subreportParameter name="from_sub">
+					<subreportParameterExpression><![CDATA[$P{fromd}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tod_sub">
+					<subreportParameterExpression><![CDATA[$P{tod}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CENACI_subreportCerrados.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

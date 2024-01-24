@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CENACI_subreportCerrados" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a3f476e2-e0d0-428e-a2e7-35f9c6cf4f92">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_sub" class="java.lang.String"/>
+	<parameter name="tod_sub" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select estatus, count(estatus) as registrosCerrados from Emergencia where estatus = 'Cerrado' and fecha BETWEEN $P{from_sub} AND $P{tod_sub};]]>
+	</queryString>
+	<field name="estatus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registrosCerrados" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="16" width="187" height="22" uuid="b410d3e1-a45a-45b9-a072-2532d1dbd9e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">REGISTROS CONCLUIDOS</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="38" width="187" height="22" forecolor="#0000CC" uuid="163edd4b-8df4-44bb-a607-480bd8f1abf4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrosCerrados}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

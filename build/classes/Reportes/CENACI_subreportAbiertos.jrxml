@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CENACI_subreportAbiertos" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2a409e19-4900-42e7-ab8a-33e1a2ee7921">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_sub" class="java.lang.String"/>
+	<parameter name="tod_sub" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select estatus, count(estatus) as registrosAbiertos from Emergencia where estatus = 'Abierto' and fecha BETWEEN $P{from_sub} AND $P{tod_sub};]]>
+	</queryString>
+	<field name="estatus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="registrosAbiertos" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="10" width="199" height="24" uuid="a85e9136-f007-49aa-8804-f0c9cde91bff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">REGISTROS EN PROGRESO</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="34" width="199" height="24" forecolor="#FF7400" uuid="6cd29a1a-e8db-4efc-85c6-368396d3a5b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrosAbiertos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

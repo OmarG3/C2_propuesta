@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="048d15ef-e3f0-42e7-8e6e-f49d6a7159e3">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="noFolio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IDuser" class="java.lang.String"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select d.* , g.hora, g.fecha, g.idUserMon, g.idEquipoMon, g.idUserAnt, g.idEquipoAnt, g.horaInforme, g.horaDespacho, g.unidades,
+g.elementos, g.horaLlegadaIn, g.reporteAnt, g.horaReportes from Emergencia d inner join Antena g on d.folio = g.folio where g.folio = $P{noFolio};]]>
+	</queryString>
+	<field name="folio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idUsuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idEquipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoLlamada" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semaforo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fase" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionHeridos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reporte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="seguridadPublica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aguaPotable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="proteccionCivil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="instanciaMujer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidadUno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otrosServicios" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incidenteDenuncia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ubicacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionLugar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="involucrados" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreDenunciante" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estatus" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idUserMon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idEquipoMon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idUserAnt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idEquipoAnt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaInforme" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaDespacho" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unidades" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="elementos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaLlegadaIn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reporteAnt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaReportes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="686" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="176" y="100" width="377" height="32" forecolor="#000000" backcolor="#CC0000" uuid="7071f439-5584-42ad-bbae-6d07eadf60a1"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="223" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="93545571-7698-4d5d-9e78-bd99268891e4"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<rectangle radius="10">
+				<reportElement x="9" y="143" width="133" height="72" forecolor="#0099FF" uuid="cab7179d-dfec-487d-a541-e12ce8308cd2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="17" y="149" width="42" height="20" uuid="c073125c-056b-44ac-8be4-5fbe7de232de"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">FOLIO:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="169" width="42" height="20" uuid="97b6f029-fc79-4345-9e2b-f96ddd13ebe5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">HORA:</style>
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="189" width="42" height="20" uuid="1cf39740-ed79-45fb-990d-994de5e6e110"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">FECHA:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="149" width="73" height="20" uuid="8da0e1f6-b6a4-48b7-bcf0-19054d9f0312"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{noFolio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="61" y="169" width="73" height="20" uuid="4bd56478-ff35-4559-93b2-a426b99d9ea4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="61" y="189" width="73" height="20" uuid="6734faf3-03d2-45d3-89b1-22278969b451"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="78" y="0" width="413" height="100" uuid="dfed8862-ae42-47fb-9f69-8b99ca1c044b"/>
+				<imageExpression><![CDATA["C:\\Users\\Omar\\Desktop\\C2 PROYECTO\\C2_propuesta\\src\\ImagenesExtras\\CENACI_report_individual_Logo.png"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement x="152" y="143" width="247" height="72" forecolor="#0099FF" uuid="12576f05-5b47-4125-8ce7-df0eaadf04ab"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="152" y="146" width="247" height="12" uuid="07011f71-b324-4b1e-9597-1317ee0a4151"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">INCIDENTE:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="161" width="243" height="34" uuid="fd1c6d74-d163-4a52-b275-9ac000532229"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{incidenteDenuncia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="154" y="197" width="69" height="12" uuid="ecafb13c-c12f-40a3-8a64-cac95596b98b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">SEMAFORO:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="223" y="197" width="55" height="12" uuid="26e6d6bb-facc-4b3f-8780-14d6ecd140c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semaforo}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="409" y="143" width="137" height="72" forecolor="#0099FF" uuid="7fc9c3c9-970f-4d62-9575-300e860e2231"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="409" y="161" width="45" height="11" uuid="20869c5c-2055-4b86-93d2-79173d84ad6a"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">EQUIPO:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="454" y="149" width="92" height="11" uuid="edc0e960-e7bd-4dcd-a8ba-ef7eac978a5f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="161" width="92" height="11" uuid="acdf03fc-501e-416c-b85c-ae2705a7fc25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEquipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="409" y="149" width="45" height="11" uuid="118bb125-1e2f-4343-bfb2-4aa2b4d1b56e"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">USUARIO:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="174" width="137" height="11" forecolor="#0000CC" uuid="8f8c6518-2cf0-4d90-9e92-f0c83061df7b"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">ACTUAL</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="185" width="45" height="12" uuid="448ebaf5-15a5-4b6d-a2bc-39d5ce0e0261"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">USUARIO:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="197" width="45" height="12" uuid="4a373768-ee48-44e6-b85e-f68e30553a05"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">NOMBRE:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="197" width="54" height="12" uuid="2485d5c3-d746-42e2-8cd6-713029e7a3ac"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">ESTATUS:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="334" y="197" width="63" height="12" uuid="47e6b353-9ace-49af-93ac-59fcf099cf65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="185" width="89" height="12" uuid="f97399cd-74db-44d7-9e47-faf5a1ad0e74"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{IDuser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="197" width="88" height="12" uuid="095bcff6-0fe1-4d7b-8fc5-275004dccee1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Name}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="9" y="243" width="538" height="90" forecolor="#CC0000" uuid="d7e8bbec-a8a6-481f-97f5-a549f3810c18"/>
+			</rectangle>
+			<textField>
+				<reportElement x="14" y="247" width="528" height="82" uuid="0908e4c3-a306-4eab-97f6-ec3ec08f4a27"/>
+				<textElement>
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionHeridos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="225" width="390" height="12" uuid="5000539a-9e5f-4776-b417-d77e3221534d"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">DESCRIPCIÓN DE HERIDOS O INCIDENTE (PRIORIDAD ALTA Ó MEDIA)</style>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="237" width="365" height="1" uuid="3969a6cd-c976-42e5-9c44-a1b908a05a9a"/>
+			</line>
+			<rectangle radius="10">
+				<reportElement x="9" y="361" width="538" height="90" forecolor="#00CC00" uuid="30b23c07-1dd4-4635-a76d-bf0ca2621469"/>
+			</rectangle>
+			<textField>
+				<reportElement x="14" y="365" width="528" height="82" uuid="7f3487ee-dbee-41e9-9548-5a19354eb34a"/>
+				<textElement>
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="343" width="273" height="13" uuid="832b7022-9f5d-45af-8d82-bc8dd3c1f03d"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">DESCRIPCIÓN DEL REPORTE (PRIORIDAD BAJA)</style>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="355" width="251" height="1" uuid="96de8ad9-cfc8-4118-b593-e4922036c6eb"/>
+			</line>
+			<rectangle radius="10">
+				<reportElement x="9" y="480" width="259" height="67" forecolor="#0099FF" uuid="0e2d9d71-0f33-43ae-80c3-fee552aa1049"/>
+			</rectangle>
+			<textField>
+				<reportElement x="16" y="487" width="116" height="13" uuid="a3483976-1755-4277-8d46-45488cedf824"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seguridadPublica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="508" width="116" height="12" uuid="7e541f77-ffe0-40c8-82f7-cf0eeaf85af1"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aguaPotable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="487" width="128" height="13" uuid="26612364-7ffb-4a98-9df8-894345a0d769"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{instanciaMujer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="508" width="128" height="12" uuid="b2b9d2b4-0171-4cb8-bdef-57c96177416c"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidadUno}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="278" y="480" width="269" height="67" forecolor="#0099FF" uuid="bced709b-6302-4041-b932-16d6f0421834"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="278" y="487" width="145" height="13" uuid="e558f247-5fc7-4fac-b59a-54a79df07787"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">LLAMADA RECIBIDA:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="487" width="118" height="13" uuid="9a194f0e-78bf-4130-b3d2-1a6eca56da3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoLlamada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="507" width="144" height="13" uuid="0b3dedf0-7801-4ade-8a5e-f093d45ebd79"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">DENUNCIANTE:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="508" width="118" height="12" uuid="0d3fa837-e89b-40ac-905a-6ba6b7a7aad6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreDenunciante}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="462" width="187" height="12" uuid="51b272f4-5577-4036-a4b1-f63f41c3f8e7"/>
+				<textElement markup="styled">
+					<font fontName="Courier New" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">SEGUIMIENTO DESPACHADOR</style>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="474" width="157" height="1" uuid="46068e6a-f21a-4f0a-a0cd-88cd38753c8c"/>
+			</line>
+			<textField>
+				<reportElement x="16" y="528" width="116" height="12" uuid="94074677-72b4-4ade-861e-92cd31b752b7"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proteccionCivil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="528" width="128" height="12" uuid="4f8f8a72-96a4-46b5-a072-fe1786e485fd"/>
+				<textElement>
+					<font fontName="Courier New" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{otrosServicios}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="528" width="143" height="13" uuid="a63d2c84-4125-4a61-8251-cb45623551fc"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">NÚMERO PROPORCIONADO:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="529" width="118" height="12" uuid="176de83f-606b-4ad9-b677-94398576a1a9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="9" y="557" width="538" height="54" forecolor="#0099FF" uuid="a0b4d05e-a689-4d42-a148-c6d240368f68"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="562" width="63" height="45" uuid="15f84275-b011-4601-bcf0-8c4dcc3b274c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">UBICACIÓN:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="562" width="120" height="45" uuid="73fb9f4b-04f2-48b8-b382-8f87d1a2b480"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ubicacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="205" y="562" width="75" height="45" uuid="70173e77-d7a5-415e-ac97-3d0ccf9b0464"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">DESCRIPCIÓN LUGAR:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="562" width="261" height="45" uuid="ae647bae-1ab9-42fd-8744-ee1990b23ee6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionLugar}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="10" y="621" width="537" height="63" forecolor="#0099FF" uuid="6828cb7f-f6e5-43bf-8016-c0941e5d89fe"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="369" y="626" width="88" height="13" uuid="abaaef1a-ad2c-4684-96f9-65fe19f085b0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">HORA INFORME:</style>]]></text>
+			</staticText>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="459" y="626" width="83" height="13" uuid="1be41473-70f6-4a09-9ca7-5ca887c2c456"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaInforme}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="626" width="95" height="13" uuid="2b5ec839-ba8d-48e0-961d-3cfcac2f7fc2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">USUARIO:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="626" width="90" height="13" uuid="252a5994-9fc5-48ae-8e0d-d98b266c98b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idUserAnt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="626" width="95" height="13" uuid="6b059d6c-1536-499b-9996-6842432be685"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEquipoAnt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="626" width="58" height="13" uuid="42a9bd6e-3aad-4444-a7e4-4ac625630c05"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">EQUIPO:</style>]]></text>
+			</staticText>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="113" y="646" width="90" height="13" uuid="b93b5709-fd47-4009-b35b-03883fbb7255"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaDespacho}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="646" width="96" height="13" uuid="b24e785a-3581-476a-8fda-d64e1ac7a49f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">HORA DESPACHO:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="647" width="95" height="12" uuid="dfefe56f-ac74-4e47-805b-b803de9e3240"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidades}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="459" y="647" width="83" height="12" uuid="6f75732c-ef75-44b6-9924-6c29d1a9f98d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaLlegadaIn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="646" width="58" height="13" uuid="a0cd77cf-a72e-47f9-aa91-6856441e46c0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">UNIDADES:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="647" width="88" height="12" uuid="217c8551-98cc-4d29-9bc9-f3587079ef14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">HORA LLEGADA:</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="667" width="430" height="12" uuid="d2577e9b-6ea8-47c6-8c91-45ee386a8eea"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Courier New" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elementos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="667" width="96" height="12" uuid="41141d6d-fc6a-4b20-b8ff-bb1047ab9a43"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">ELEMENTOS:</style>]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="10" y="5" width="537" height="19" forecolor="#999900" backcolor="#CCCCCC" uuid="98208b98-f88a-40af-93f3-dc8578a9fa4f"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="15" y="8" width="527" height="14" backcolor="#CCCCCC" uuid="31bf4884-0b9d-487b-b285-afffbf177db4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Courier New" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">NOTAS GENERADAS</style>]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="64">
+			<rectangle radius="10">
+				<reportElement x="10" y="4" width="536" height="55" forecolor="#999900" uuid="69bdc33e-d75d-4b68-9d7f-891b2d372a95"/>
+			</rectangle>
+			<textField>
+				<reportElement x="14" y="8" width="480" height="47" uuid="193ce6c4-7fa1-403e-a4fc-f9aeb9bbee25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reporteAnt}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="497" y="8" width="45" height="47" forecolor="#0000CC" uuid="d5afff3f-da00-46d5-b481-88f17ee506b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaReportes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="ce37df77-cd85-4e89-9274-e32c22ce765f"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="9eb0b881-bc87-43e0-a426-ac5ed4372299"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="c2e01f9f-8b10-4538-95e4-be2020161847"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
